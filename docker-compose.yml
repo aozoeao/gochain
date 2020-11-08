@@ -1,0 +1,15 @@
+version: '3.6'
+
+services:
+    tp-docker:
+        image: app
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            IP: localhost
+            PORT: 8000
+            POSTGRES_URL: tp-docker
+            POSTGRES_PASSWORD: somepass
+        volumes:
+            - $HOME/data/postgres:/var/lib/postgresql/data
