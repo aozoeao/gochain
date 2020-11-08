@@ -7,7 +7,6 @@ RUN set -x && \
 	go get github.com/julienschmidt/httprouter && \
 	go get github.com/lib/pq 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /main-app
-CMD ["/main-app"]
 EXPOSE 8000
 
 FROM scratch
